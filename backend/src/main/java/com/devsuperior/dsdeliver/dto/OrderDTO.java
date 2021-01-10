@@ -23,12 +23,14 @@ public class OrderDTO {
     private Double longitude;
     private Instant moment;
     private OrderStatus status;
+    private Double total;
 
     @Setter(AccessLevel.NONE)
     private List<ProductDTO> products = new ArrayList<>();
 
     public OrderDTO(Order order) {
         map(order, this);
+        total = order.getTotal();
         products = mapList(order.getProducts(), ProductDTO.class);
     }
 }

@@ -33,6 +33,10 @@ public class Order implements Serializable {
     @JoinTable(name = "tb_order_product", joinColumns = @JoinColumn(name = "order_id"), inverseJoinColumns = @JoinColumn(name = "product_id"))
     private final Set<Product> products = new HashSet<>();
 
+    public Double getTotal() {
+        return products.stream().map(Product::getPrice).reduce(0D, Double::sum);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
