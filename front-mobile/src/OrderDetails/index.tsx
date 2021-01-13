@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { StyleSheet, Text, View, Image, Alert, Linking } from 'react-native';
-import { RectButton, TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import { StyleSheet, Text, View, Alert, Linking } from 'react-native';
+import { RectButton } from 'react-native-gesture-handler';
 import { confirmDelivery } from '../api';
 import Header from '../Header';
 import OrderCard from '../OrderCard';
